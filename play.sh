@@ -1,4 +1,6 @@
 #!/bin/bash
+# Created by: Farhad Atroshi
+# 2016
 
 ARG=$1				# Search string
 SEARCH_RESULT=()		# Array for storing the hits
@@ -20,20 +22,32 @@ if [ $# -eq 0 ]
 		do
 			SEARCH_RESULT+=("$line")
 		done < ".tmp"
+		
+		# check if file is not empty
+		if [ -s .tmp ]
+
+			then
+		
+			# Display result for user
+			echo 
+  			echo -e "---------------------------------------------------------------------"
+			echo -e "ID" ' \t ' "File name"
+			echo -e "---------------------------------------------------------------------"
+			for element in "${SEARCH_RESULT[@]}"
+			do
+ 				echo -e "["$COUNTER"]" ' \t ' "$element"
+				COUNTER=$((COUNTER+1))
+   			done	
+		fi
+
 		# Remove file
 		rm .tmp	
-
-		# Display result for user
-		for element in "${SEARCH_RESULT[@]}"
-		do
-   			echo -e "["$COUNTER"]" ' \t ' "$element"
-			COUNTER=$((COUNTER+1))
-   		done	
 
 		# Check if we had hits
 		if [ "$COUNTER" -gt "0" ]
 			then
-				echo -n "Enter id for file to play: "	
+				echo
+				echo -n "Enter file id: "	
 				read INPUT
 				
 				if [ $COUNTER -gt $INPUT ]
