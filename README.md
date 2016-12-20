@@ -1,7 +1,7 @@
 # Bash script mplayer & find
 
 ## Search for files and play with mplayer
-bash .play your_search_string
+bash play.sh your_search_string
 
 [0] first_found_item
 [1] second_found_item
