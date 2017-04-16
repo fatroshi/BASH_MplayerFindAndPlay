@@ -8,9 +8,8 @@
 
 ### Create .bash_profile
 1. nano .bash_profile
-2. Paste in: 
-   PATH=$PATH:$HOME/bin 
-   alias fplay='play.sh '
+2. Paste in: PATH=$PATH:$HOME/bin 
+2. Paste in: alias fplay='play.sh '
 4. Save file
 
 ### Add bash script to $HOME/bin directory
@@ -20,11 +19,11 @@ cd ~/bin
 fplay your_search_string
 
 ### Result
-[0] first_found_item
-[1] second_found_item
+[0] first_item
+[1] second_item
 
 Enter id for file to play: 1 
 
-Will play the second_found_item file
+Will play the second_item file
 
 
