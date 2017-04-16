@@ -8,8 +8,9 @@
 
 ### Create .bash_profile
 1. nano .bash_profile
-2. Paste in: PATH=$PATH:$HOME/bin 
-3. alias fplay='play.sh '
+2. Paste in: 
+   PATH=$PATH:$HOME/bin 
+   alias fplay='play.sh '
 4. Save file
 
 ### Add bash script to $HOME/bin directory
