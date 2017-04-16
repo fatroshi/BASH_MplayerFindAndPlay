@@ -1,8 +1,8 @@
 # Bash script mplayer & find
 
 
-##Install
-###Create folder
+## Install
+### Create folder
 1. cd ~
 2. mkdir bin
 
