@@ -12,7 +12,7 @@
 2. Paste in: alias fplay='play.sh '
 4. Save file
 
-### Add bash script to $HOME/bin directory
+### Add the bash script "play.sh" to $HOME/bin directory
 cd ~/bin
 
 ## Search for files and play with mplayer
