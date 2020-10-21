@@ -15,6 +15,9 @@
 ### Add the bash script "play.sh" to $HOME/bin directory
 cd ~/bin
 
+## Set execute permission on the script
+chmod +x play.sh
+
 ## Search for files and play with mplayer
 fplay your_search_string
 
