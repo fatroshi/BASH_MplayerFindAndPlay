@@ -3,7 +3,7 @@
 # 2016
 
 ARG=$1				# Search string
-SEARCH_RESULT=()		# Array for storing the hits
+SEARCH_RESULT=()	# Array for storing the hits
 COUNTER=0			# Counter for the hits
 INPUT=0				# Input from user when selecting the file to play
 
@@ -15,11 +15,14 @@ if [ $# -eq 0 ]
 	else
 		# Search for the file
 		# Sore result in tmp file 
-		find . -iname '*'$ARG'*' >> .tmp
-		
+		#find . -iname '*'$ARG'*' -type f -iname \*.jpg -o -type f -iname \*.png >> .tmp
+	
+        find . -type f \( -iname "*$ARG*.mkv" -or -iname "*$ARG*.webm" -or -iname "*$ARG*.mp4" -or -iname "*$ARG*.mp3" \) >> .tmp
+        
 		# Add elements to array
 		while read -r line
 		do
+            echo $line
 			SEARCH_RESULT+=("$line")
 		done < ".tmp"
 		
@@ -44,7 +47,7 @@ if [ $# -eq 0 ]
 		rm .tmp	
 
 		# Check if we had hits
-		if [ "$COUNTER" -gt "0" ]
+		if [ "$COUNTER" -gt "1" ]
 			then
 				echo
 				echo -n "Enter file id: "	
@@ -56,6 +59,13 @@ if [ $# -eq 0 ]
 					else
 						echo "Dude wrong index..."
 				fi
+			elif [ "$COUNTER" -eq "1" ]
+                then
+                    mplayer "${SEARCH_RESULT[0]}"
+                    
+            else
+                echo -e "No match for: $ARG "
+		
 		fi
 		
 fi
